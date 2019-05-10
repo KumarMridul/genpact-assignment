@@ -33,7 +33,7 @@ const employeeIdSelected = {
   value: ''
 };
 
-class App extends React.Component  {
+export class App extends React.Component  {
   constructor() {
     super();
     this.state= {
@@ -76,7 +76,7 @@ class App extends React.Component  {
       return <div>Loading...</div>;
     }
     return (
-        <div>
+        <div className='mainContainer'>
            <Dropdown placeholder="Select Department" label="Department" options={dept_options} styles={dropdownStyles}  onChanged={ this.depatmentClickedFn }/>
            {this.state.employeeDropDown === '' && <Dropdown placeholder="Select Employee id" label="Employee id"  styles={dropdownStyles} /> } 
           {this.state.employeeDropDown === 'HR' && <Dropdown placeholder="Select Employee id" label="Employee id" options={employee_HR_options} styles={dropdownStyles} onChanged={ this.employeeClickedFn }/> }
